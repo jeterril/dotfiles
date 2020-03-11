@@ -5,9 +5,9 @@ for dotfile in .bashrc .gitconfig .tmux.conf .vimrc
 do
 	if test -f ~/$dotfile
 	then
-		mv ~/$dotfile ~/.backup
+		mv -n ~/$dotfile ~/.backup
 		ln -s ~/dotfiles/$dotfile ~/$dotfile
 	fi
 done
 
-source ~/.bashrc
+source ~/dotfiles/.bashrc
