@@ -6,6 +6,6 @@ do
 	if test -f ~/$dotfile
 	then
 		mv -n ~/$dotfile ~/.backup/dotfiles
-		ln -s ~/dotfiles/$dotfile ~/$dotfile 2> /dev/null
 	fi
+	ln -s ~/dotfiles/$dotfile ~/$dotfile 2> /dev/null
 done
