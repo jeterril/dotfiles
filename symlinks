@@ -1,4 +1,12 @@
 #!/bin/bash
+mkdir .backup
+mv \
+	~/.bashrc \
+	~/.gitconfig \
+	~/.tmux.conf \
+	~/.vimrc \
+	.backup
+
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
