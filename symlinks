@@ -1,8 +1,11 @@
 #!/bin/bash
 mkdir -p ~/.backup
 
-for $dotfile in .bashrc .gitconfig .tmux.conf .vimrc
-do mv ~/$dotfile ~/.backup; ln -s ~/dotfiles/$dotfile ~/$dotfile
+for dotfile in .bashrc .gitconfig .tmux.conf .vimrc
+do
+	if test -f ~/$dotfile
+	then
+		mv ~/$dotfile ~/.backup
+		ln -s ~/dotfiles/$dotfile ~/$dotfile
+	fi
 done
-
-source .bashrc
