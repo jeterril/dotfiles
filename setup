@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir -p ~/.backup
+mkdir -p ~/.backup/dotfiles
 
 for dotfile in .bashrc .gitconfig .tmux.conf .vimrc
 do
