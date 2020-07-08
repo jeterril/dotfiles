@@ -17,8 +17,8 @@ PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
 alias cp='cp -rv'
-alias ls='ls --color=auto -ACF'
-alias ll='ls --color=auto -alF'
+alias ls='ls --color=auto -CF'
+alias ll='ls --color=auto -lF'
 alias mv='mv -v'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
