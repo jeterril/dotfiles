@@ -12,7 +12,8 @@ complete -cf sudo
 function git_branch () {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-PS1="\[\e[30;1m\]\H \[\e[36;1m\]\u \[\e[0m\]\w\[\e[33;1m\]\$(git_branch) \[\e[30;1m\]$ \[\e[0m\]"
+
+PS1="\[\e[30;1m\]\h \[\e[36;1m\]\u \[\e[0m\]\w\[\e[33;1m\]\$(git_branch) \[\e[30;1m\]$ \[\e[0m\]"
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
@@ -36,6 +37,13 @@ function git-sync {
   git checkout master
   git fetch --all
   git merge upstream/master
+  git push origin master
+}
+
+function git-save {
+  git add .
+  read -p 'Enter commit message: ' commit_msg
+  git commit -m "$commit_msg"
   git push origin master
 }
 
