@@ -44,7 +44,7 @@ function git-save {
   git add .
   read -p 'Enter commit message: ' commit_msg
   git commit -m "$commit_msg"
-  git push origin master
+  git push origin `git branch`
 }
 
 function cd {
