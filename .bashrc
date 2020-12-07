@@ -41,10 +41,11 @@ function git-sync {
 }
 
 function git-save {
+  git_branch = `git branch`
   git add .
   read -p 'Enter commit message: ' commit_msg
   git commit -m "$commit_msg"
-  git push origin `git branch`
+  git push origin $git_branch
 }
 
 function cd {
