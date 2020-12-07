@@ -40,19 +40,7 @@ function git-sync {
   git push origin master
 }
 
-function git-save {
-  git_branch_name = `git branch`
-  git add .
-  read -p 'Enter commit message: ' commit_msg
-  git commit -m "$commit_msg"
-  git push origin $git_branch_name
-}
-
 function cd {
   builtin cd "$1"
   ls -lAF
-}
-
-function vimod {
-    vim -p $(git status -suall | awk '{print $2}')
 }
