@@ -16,11 +16,17 @@ PS1="\[\e[30;1m\]\H \[\e[36;1m\]\u \[\e[0m\]\w\[\e[33;1m\]\$(git_branch) \[\e[30
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
-alias cp='cp -rv'
+alias a-p='ansible-playbook'
+alias a-d='ansible-doc'
+alias a-v='ansible-vault'
+alias a-i='ansible-inventory'
+alias a-g='ansible-galaxy'
+alias cp='cp -irv'
 alias ls='ls --color=auto -CF'
 alias ll='ls --color=auto -lF'
-alias mv='mv -v'
 alias mkdir='mkdir -pv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
 alias wget='wget -c'
 
 alias sshcon="netstat -W | awk '/:ssh/ {print \$5}'"
@@ -35,7 +41,7 @@ function git-sync {
 
 function cd {
   builtin cd "$1"
-  ls -ACF
+  ls -lAF
 }
 
 function vimod {
